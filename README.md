@@ -62,6 +62,13 @@ If a browser frontend calls the API from a different origin, set
 `Cors__AllowedOrigins__0` to its exact origin (for example, `https://qr.example.com`).
 Set `EnableSwagger=true` if you need the Swagger UI at `/swagger`.
 
+To use settings from a file, add a file mount under **Advanced → Volumes/Mounts**.
+Use `appsettings.json` as the file name and `/app/appsettings.json` as the mount
+path. Use `docker/appsettings.json` as a template and copy the values you need
+from your local settings into the mount. Remove any `AllowedApiKeys` or
+`Cors__AllowedOrigins__0` environment variables in Dokploy so the file supplies
+those values. The Dockerfile already configures port `8080`.
+
 The image uses `docker/appsettings.json` for its defaults and writes logs to
 standard output. `POST /GenerateQrCode` works without SQL Server. For certificate
 verification, mount the public certificate under `/app/Certificats/` and set
