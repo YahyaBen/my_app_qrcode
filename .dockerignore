@@ -1,0 +1,14 @@
+*
+!Template.QrCode.Api/
+!docker/appsettings.json
+
+Template.QrCode.Api/bin/
+Template.QrCode.Api/obj/
+Template.QrCode.Api/logs/
+Template.QrCode.Api/**/appsettings*.json
+Template.QrCode.Api/**/.env*
+Template.QrCode.Api/Certificats/key.crt
+**/*.key
+**/*.pem
+**/*.pfx
+**/*.p12
